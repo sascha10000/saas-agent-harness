@@ -1,0 +1,18 @@
+# Rust build output (app/ is the generated product, scaffold/ is the template)
+target/
+app/target/
+
+# Secrets & local config
+.env
+.env.local
+
+# Databases
+*.sqlite
+*.sqlite3
+*.db
+
+# GAN harness heavy artifacts (keep specs/feedback, drop screenshots)
+gan-harness/screenshots/
+
+# OS noise
+.DS_Store
