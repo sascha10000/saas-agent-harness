@@ -23,6 +23,9 @@ Every driver-tree node's data source must be measurable in the product:
 
 ## Non-functional requirements
 - Server-rendered (Askama) unless STACK.md deviates; responsive; accessible basics.
+- UI slices: load the `frontend-design` and `frontend-ui-engineering` skills (if
+  available in the session) before implementing frontend code; the evaluator's
+  Design/UX score assumes that bar.
 - All KPI events captured server-side (no third-party analytics dependency by default).
 - Runs via `docker compose up` for self-hosting.
 

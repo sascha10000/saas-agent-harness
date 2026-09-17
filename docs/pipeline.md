@@ -54,6 +54,11 @@ graph LR
 Env for both paths comes from `.env` (see `.env.example`): dev server command, port,
 eval mode, pass threshold, max iterations.
 
+**UI slices:** generator briefs must instruct loading `frontend-design` /
+`frontend-ui-engineering` skills (if installed) before frontend work; absence is
+noted in generator-state.md, and the evaluator scores Design/UX against the same
+bar regardless.
+
 ## Gate behavior
 
 When a hard gate (money / deploy / external-send) is hit:

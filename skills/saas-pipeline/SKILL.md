@@ -40,6 +40,14 @@ description: >
 phase-4 slice exit that changed tables/endpoints/vendors, and finalize during
 phase 5 (LAUNCH.md carries the user sign-off item).
 
+**UI design skills (phase 4):** for any slice with user-facing UI, the generator
+MUST load available frontend design skills BEFORE writing frontend code — prefer
+`frontend-design` and `frontend-ui-engineering` (check the session's skill
+listing; plugin-namespaced variants count). Pass this instruction into the
+generator's brief and gan-harness/spec.md. If neither skill is available, proceed
+with the eval rubric's Design/UX criteria alone and note the absence in
+generator-state.md — the evaluator scores against the elevated bar either way.
+
 **Phase 4 fallback:** if `/ecc:orch-build-mvp` stalls on an internal prompt, drive
 `/ecc:gan-build "<slice brief>" --skip-planner` per slice directly (see docs/pipeline.md).
 

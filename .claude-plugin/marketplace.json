@@ -9,7 +9,7 @@
       "name": "saas-harness",
       "source": "./",
       "description": "KPI-driven autonomous SaaS pipeline: idea discovery, marketing assets, Rust/Askama scaffold, adversarial MVP build loop, launch gates, GDPR compliance docs",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "license": "MIT"
     }
   ]
