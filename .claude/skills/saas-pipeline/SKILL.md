@@ -35,6 +35,11 @@ description: >
 
 3a and 3b run concurrently. Phase 4 needs only 3b; phase 5 needs 3a and 4.
 
+**Compliance track (cross-cutting):** invoke the `compliance-docs` skill once after
+3b exits (initial project/COMPLIANCE/ from the scaffold), re-invoke at every
+phase-4 slice exit that changed tables/endpoints/vendors, and finalize during
+phase 5 (LAUNCH.md carries the user sign-off item).
+
 **Phase 4 fallback:** if `/ecc:orch-build-mvp` stalls on an internal prompt, drive
 `/ecc:gan-build "<slice brief>" --skip-planner` per slice directly (see docs/pipeline.md).
 

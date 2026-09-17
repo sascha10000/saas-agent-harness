@@ -28,6 +28,12 @@ is the contract; the skills in `.claude/skills/` implement it.
 
 Normative details (entry/exit criteria, fallbacks): `docs/pipeline.md`.
 
+**Compliance track:** the `compliance-docs` skill generates `project/COMPLIANCE/`
+(data map, Art. 30 RoPA, TOMs, vendors, retention, DSAR playbook, questionnaire)
+derived from the codebase — first after 3b, refreshed at every phase-4 slice that
+touches data, finalized in phase 5. Docs are drafts requiring user sign-off; they
+accelerate audits, they do not replace them.
+
 ## Autonomy contract (hard rules)
 
 STOP and ask the user ONLY for:

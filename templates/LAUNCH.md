@@ -11,6 +11,9 @@
 - [ ] Docker image builds; `docker compose up` serves the app locally
 - [ ] Landing page reflects MARKETING/positioning.md
 - [ ] Backup strategy for the database documented
+- [ ] `project/COMPLIANCE/` regenerated at the launch commit (compliance-docs
+  skill) and REVIEWED/SIGNED OFF by the user — drafts must match reality before
+  they are handed to any DPO/customer/auditor
 
 ## Gates (user required)
 - [ ] [GATE: USER — money] Domain purchase: {{proposed domain(s) + price}}
