@@ -22,14 +22,19 @@ Every driver-tree node's data source must be measurable in the product:
 4. …
 
 ## Non-functional requirements
-- Server-rendered (Askama) unless STACK.md deviates; responsive; accessible basics.
+- Platform + stack per STACK.md (web SSR default; desktop/mobile per its Platform
+  section); responsive/adaptive; accessible basics.
 - UI slices: load the `frontend-design` and `frontend-ui-engineering` skills (if
   available in the session) before implementing frontend code; the evaluator's
   Design/UX score assumes that bar.
-- All KPI events captured server-side (no third-party analytics dependency by default).
-- Runs via `docker compose up` for self-hosting.
+- All KPI events captured server-side (web) or via the companion API
+  (desktop/mobile); no third-party analytics dependency by default.
+- Server-side parts run via `docker compose up` for self-hosting; apps build via
+  their ecosystem's release tooling.
 
-## Evaluator notes (Rust specifics)
-- Dev server: `$GAN_DEV_SERVER_CMD` (see .env). Cold `cargo build` is slow —
-  **poll `GET /health` until 200 before any Playwright testing**, timeout 180s.
+## Evaluator notes
+- Eval mode per STACK.md: web → playwright against `$GAN_DEV_SERVER_CMD`
+  (poll `GET /health` until 200 before UI testing, timeout 180s — cold compiled
+  builds are slow); desktop/mobile → code-only (native test suite + build gates;
+  the companion API gets the /health-poll treatment).
 - Stripe stays in test mode throughout the build (live keys are a money gate).

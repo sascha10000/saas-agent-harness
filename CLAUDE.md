@@ -63,11 +63,29 @@ All state lives in `project/`, instantiated from `templates/` on first run:
 - `STACK.md`, `MARKETING/`, `MVP-SPEC.md`, `LAUNCH.md`, `BACKLOG.md` — per-phase artifacts.
 - `research/` — saved research reports from phase 2.
 
-## Default tech stack (deviate only with logged justification)
+## Platform & stack selection
 
-Rust + axum + Askama (server-rendered) · SQLite via sqlx (Postgres only if concurrency/
-scale justifies) · Stripe · self-hosted via Docker. SPA framework only if the product
-genuinely needs rich client interactivity beyond Askama. See `docs/rust-build-notes.md`.
+**User-stated constraints are BINDING.** If the goal or the user says "use Python",
+"only TypeScript", "as a desktop app", "mobile first", etc., that constraint
+overrides every default below. Record it in STATE.md (Identity → Constraints) and
+STACK.md (User-mandated constraints). It needs no justification — only
+best-in-class choices *within* it.
+
+**Platform** is decided in phase 3b from the chosen idea; **web is the default**
+unless the idea or the user demands otherwise.
+
+| Platform | Default stack | User mandates Python | User mandates TypeScript |
+|---|---|---|---|
+| Web (default) | Rust + axum + Askama (SSR), SQLite via sqlx | FastAPI + Jinja2/HTMX, SQLite | Next.js (SSR), SQLite |
+| Desktop | Tauri v2 (Rust core, web UI) | best-in-class within constraint, logged | Electron (or Tauri + TS frontend) |
+| Mobile | Flutter | best-in-class within constraint, logged | Expo / React Native |
+
+Cross-platform invariants: Stripe for payments; self-hosted Docker for anything
+server-side; Postgres only if concurrency/scale justifies. **Non-web products
+still need a small companion API** (KPI events + subscriptions — the driver tree
+must stay instrumentable); plan it as part of the scaffold. Deviations from the
+*resulting* default still require logged justification in STACK.md.
+`docs/rust-build-notes.md` covers the web-Rust default specifically.
 
 ## Research budget
 

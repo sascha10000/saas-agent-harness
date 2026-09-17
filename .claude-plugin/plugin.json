@@ -1,7 +1,7 @@
 {
   "name": "saas-harness",
   "description": "KPI-driven autonomous SaaS pipeline: KPI definition, idea discovery, marketing assets, Rust/Askama stack, adversarial MVP build loop, launch gates, and code-derived GDPR compliance docs. Run /saas-harness:init in an empty directory to start a project.",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "author": {
     "name": "sascha10000"
   },

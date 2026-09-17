@@ -7,6 +7,8 @@
 ## Identity
 - Project: {{name — set after idea chosen, else "unnamed"}}
 - Raw goal (verbatim user input): {{goal}}
+- Constraints (binding, verbatim user statements): {{none | e.g. "only TypeScript",
+  "as a mobile app" — appended whenever the user states one}}
 - Started: {{YYYY-MM-DD}}
 
 ## Pipeline position

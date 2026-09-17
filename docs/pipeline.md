@@ -33,7 +33,7 @@ graph LR
 | 1-kpi | raw goal in STATE.md | KPI.md: 6 sections, nodes with units + in-product data sources, ≥2 guardrails |
 | 2-idea | KPI.md complete | IDEA.md: ≥4 candidates from distinct perspectives, stated weights, winner with product-lens PASS |
 | 3a-marketing | idea chosen | MARKETING/: positioning, landing-page, seo-plan, emails, social, README — all non-empty |
-| 3b-stack | idea chosen | STACK.md written; app/ copied from scaffold/; `cargo check` passes; `cargo build` pre-warmed |
+| 3b-stack | idea chosen | STACK.md written (platform + binding user constraints + stack); scaffold created (copied for web-Rust default, generated via ecosystem init tool otherwise); ecosystem check gate passes; build cache pre-warmed |
 | 4-mvp-build | 3b done; MVP-SPEC.md filled | all slices pass their eval; `ecc:verification-loop` green; checkpoint per slice |
 | 5-launch | 3a done AND 4 done | LAUNCH.md pre-launch items checked; gates concretized as STATE.md blockers; BACKLOG.md ≥5 items |
 

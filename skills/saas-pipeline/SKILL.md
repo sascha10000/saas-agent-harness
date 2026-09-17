@@ -16,6 +16,12 @@ description: >
    - **Missing + argument given:** instantiate `project/STATE.md` and
      `project/DECISIONS.md` from `templates/` (replace `{{…}}` placeholders; record the
      raw goal verbatim; today's date), set phase `1-kpi`, continue below.
+     **Constraint parsing:** extract any platform/stack constraints from the goal
+     (e.g. "use Python", "only TypeScript", "as a mobile/desktop app", or an
+     explicit `| stack: …` / `| platform: …` segment) into STATE.md Identity →
+     Constraints, verbatim. Constraints stated by the user LATER in any session
+     are appended there too — they are binding for stack-decision (see CLAUDE.md
+     Platform & stack selection).
    - **Missing + no argument:** ask the user for `"<domain or idea> | KPI: <goal>"` —
      the only allowed preference question in the pipeline.
    - **Present:** resume at `Next action` exactly as written. Completed phases (exit
@@ -29,7 +35,7 @@ description: >
 | 1 | kpi | goal recorded | invoke `kpi-definition` skill | KPI.md complete (6 sections) |
 | 2 | idea | KPI.md exists | invoke `idea-discovery` skill | ≥4 scored candidates, one chosen, product-lens PASS |
 | 3a | marketing | idea chosen | invoke `marketing-assets` skill (may run as background subagent) | all five MARKETING/ files exist |
-| 3b | stack | idea chosen | invoke `stack-decision` skill | STACK.md written; `app/` passes `cargo check` |
+| 3b | stack | idea chosen | invoke `stack-decision` skill (resolves platform web/desktop/mobile + stack; user constraints binding) | STACK.md written; scaffold passes its ecosystem's check gate |
 | 4 | mvp-build | 3b done | fill `project/MVP-SPEC.md` from templates/MVP-SPEC.md using IDEA.md + STACK.md (+ positioning if 3a done); run `/ecc:orch-build-mvp project/MVP-SPEC.md` with env from `.env`; `/ecc:checkpoint create <slice>` after each passing slice | build report all slices passing + `ecc:verification-loop` green |
 | 5 | launch | 3a + 4 done | invoke `launch-kpi-loop` skill | LAUNCH.md complete up to gates; BACKLOG.md seeded |
 
