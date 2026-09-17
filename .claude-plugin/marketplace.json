@@ -1,0 +1,16 @@
+{
+  "name": "saas-agent-harness",
+  "description": "SaaS Agent Harness — KPI-driven autonomous SaaS development pipeline",
+  "owner": {
+    "name": "sascha10000"
+  },
+  "plugins": [
+    {
+      "name": "saas-harness",
+      "source": "./",
+      "description": "KPI-driven autonomous SaaS pipeline: idea discovery, marketing assets, Rust/Askama scaffold, adversarial MVP build loop, launch gates, GDPR compliance docs",
+      "version": "0.2.0",
+      "license": "MIT"
+    }
+  ]
+}

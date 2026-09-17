@@ -20,19 +20,36 @@ Given a one-line goal, the harness drives a six-phase pipeline:
 Everything runs without asking, **except** three hard gates that always require you:
 spending money, deploying to production, and sending/publishing anything external.
 
-## Usage
+## Installation (as a Claude Code plugin — recommended)
+
+```
+# In Claude Code:
+/plugin marketplace add sascha10000/saas-agent-harness
+/plugin install saas-harness@saas-agent-harness
+
+# Then, in an empty project directory:
+/saas-harness:init
+/saas-harness:saas-pipeline "jobs and listings space | KPI: maximize MRR"
+
+# Resume any time (state lives in project/STATE.md):
+/saas-harness:saas-pipeline
+
+# Sync a project after a plugin update:
+/saas-harness:init --update
+```
+
+The plugin ships the seven pipeline skills globally (namespaced
+`saas-harness:*`); `init` copies the per-project assets (templates/, scaffold/,
+docs/, CLAUDE.md, settings) into your directory.
+
+## Usage (as a plain template, without plugin)
 
 ```bash
-# 1. Copy this template
 cp -r saas-agent-harness my-new-saas && cd my-new-saas
 rm -rf .git && git init -b main
-
-# 2. Start Claude Code and kick off the pipeline
+mkdir -p .claude && cp -r ../saas-agent-harness/skills .claude/skills
 claude
 > /saas-pipeline "jobs and listings space | KPI: maximize MRR"
-
-# 3. Resume any time (state lives in project/STATE.md)
-> /saas-pipeline
 ```
 
 ## Layout
